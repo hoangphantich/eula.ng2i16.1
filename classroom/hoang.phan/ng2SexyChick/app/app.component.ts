@@ -1,7 +1,15 @@
 import { Component } from '@angular/core';
 
+/*
+* decorator function
+*/
 @Component({
-    selector: 'my-app',
-    template: `<h1>My First Angular App</h1>`
+    selector: 'my-sexy',
+    template: `<h1>SexyChick homepage</h1>`
 })
+
+/**
+ * class AppComponent
+ * @author hoangpt
+ */
 export class AppComponent { }
