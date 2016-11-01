@@ -23,8 +23,8 @@ import { Component } from '@angular/core';
                 <!-- menu -->
             <div id="mainMnu">
                     <ul class="listItemMnuMain">
-                        <li><a href="./home"><img style="position: relative; top: 5px;" src="http://images.tienphong.vn/hoahau/App_Themes/Version2/images/iconhomeFter.png" alt=""></a></li>
-                        <li><a href="./sexies">Sexy</a></li>
+                        <li><a [routerLink]="['/home']"><img style="position: relative; top: 5px;" src="http://images.tienphong.vn/hoahau/App_Themes/Version2/images/iconhomeFter.png" alt=""></a></li>
+                        <li><a [routerLink]="['/sexies']">Sexy</a></li>
                         <li><a href="./events">Event</a></li>
                     </ul>
             </div>

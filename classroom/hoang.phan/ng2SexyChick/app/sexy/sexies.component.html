@@ -17,31 +17,36 @@
         <thead>
             <tr>
                 <th>
-                    <button class='btn btn-primary'>
+                    <button (click)="showInfo()">
                                 Show info
                     </button>
                 </th>
                 <th width="25%">Name</th>
-                <th width="20%">Info</th>
+                <th width="20%">Metric</th>
                 <th width="10%">Catse</th>
                 <th width="10%">Code</th>
                 <th width="15%">Rating</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr *ngFor="let sexy of sexies">
                 <td>
-                    <img width="100px" src="./mock_data/images/lothiton.jpg">
+                    <img *ngIf="flagShow" width="100px" src="{{sexy.image}}">
                 </td>
-                <td><a>
-                            LO THI TON
-                        </a>
-                </td>
-                <td>12313</td>
-                <td>312312</td>
-                <td>423434</td>
                 <td>
-                    *****
+                    <p>
+                        <a>{{sexy.name}}</a></p>
+                    <p>Tuoi: {{sexy.info.age}}</p>
+                    <p>Slogan: {{sexy.info.desc}}</p>
+                </td>
+                <td>
+                    <p>v1: </p>
+                    <p>v2: </p>
+                </td>
+                <td>2000</td>
+                <td><span *ngIf="flagShow">{{sexy.code | lowercase }}</span></td>
+                <td>
+                    500
                 </td>
             </tr>
         </tbody>

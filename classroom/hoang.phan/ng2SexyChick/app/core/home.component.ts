@@ -3,6 +3,7 @@
  * import module needed
  */
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 /*
 * decorator function
@@ -19,6 +20,12 @@ import { Component } from '@angular/core';
 export class HomeComponent { 
     //variable: type
     //public variable
+    //type
     pageTitle: string = "Introduction";
+    private titleService: Title = new Title();
+
+    constructor() {
+        this.titleService.setTitle(this.pageTitle);
+    }
 
 }
