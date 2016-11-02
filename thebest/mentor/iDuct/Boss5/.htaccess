@@ -19,8 +19,7 @@ ExpiresDefault "access plus 1 days"
 
 #Rewite for Apache
 RewriteEngine On
-#RewriteBase /bontrax/site/
 RewriteRule ^index\.html$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule !\.(ico|js|gif|jpeg|jpg|png|css|swf|flv|ttf|woff)$ index.html [L]
+RewriteRule !\.(ico|js|gif|jpeg|jpg|png|css|swf|flv|ttf|woff)$ ./index.html [L]
