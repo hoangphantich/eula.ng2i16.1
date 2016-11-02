@@ -2,6 +2,8 @@
  * import module needed
  */
 import { Component } from '@angular/core';
+import { Sexy } from '../model/Sexy';
+import { FilterSexyPipe } from '../helpers/filtersexy.pipe'
 
 /*
 * decorator function
@@ -9,6 +11,7 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'sexiest-wrapper',
     templateUrl: 'app/sexy/sexies.component.html'
+    //declarations: [FilterSexyPipe]
 })
 
 /**
@@ -19,10 +22,17 @@ export class SexiesComponent {
     //variable: type
     //public variable
     pageTitle: string = "SexyChick List";
+
+    //prop binding demo -> for styling
+    widthImage: number = 150;
+
+    //filter word
+    filterWord: string = "";
     
     //primitive / plain
-    sexies: [any] = [
+    sexies: [Sexy] = [
         {
+            "id": 1,
             "name":"LO THI TON",
             "image": "mock_data/images/lothiton.jpg",
             "info":{
@@ -41,6 +51,7 @@ export class SexiesComponent {
             "vote": 500
         },
         {
+            "id":2,
             "name":"HA THIEN LON",
             "image": "mock_data/images/hathienlon.jpg",
             "info":{
@@ -60,6 +71,17 @@ export class SexiesComponent {
         }
     ];
 
+    //run after constructor
+    ngOnInit() { 
+        console.log("Init view");
+    }
+
+    ngAfterViewInit(){
+        console.log("View render finish");
+    
+        this.flagShow = true;
+    }
+    
     //public prop
     flagShow: boolean = false; //default
 

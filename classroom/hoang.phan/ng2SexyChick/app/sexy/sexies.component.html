@@ -7,9 +7,9 @@
 <div class="pad20"></div>
 <div class="sexy-list">
     <!-- Filter   -->
-    <span>Search</span>
-    <input class="search" type='text' />
-    <h3>Filter by keyword: </h3>
+    <span>Search </span>
+    <input class="search" type='text' [(ngModel)]="filterWord" />
+    <h3>Filter by keyword: {{filterWord}}</h3>
 
     <!-- table -->
     <div class='has-error'> </div>
@@ -17,8 +17,11 @@
         <thead>
             <tr>
                 <th>
-                    <button (click)="showInfo()">
+                    <button *ngIf="flagShow" (click)="showInfo()">
                                 Show info
+                    </button>
+                    <button *ngIf="!flagShow" (click)="showInfo()">
+                                Hide info
                     </button>
                 </th>
                 <th width="25%">Name</th>
@@ -29,9 +32,9 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let sexy of sexies">
+            <tr *ngFor="let sexy of sexies | filterSexy:filterWord">
                 <td>
-                    <img *ngIf="flagShow" width="100px" src="{{sexy.image}}">
+                    <img *ngIf="flagShow" [src]="sexy.image" [style.width.px]="widthImage">
                 </td>
                 <td>
                     <p>
@@ -42,8 +45,10 @@
                 <td>
                     <p>v1: </p>
                     <p>v2: </p>
+                    <p>v3: </p>
+                    <p>Height: </p>
                 </td>
-                <td>2000</td>
+                <td> {{sexy.catse | currency:'VND':true:'.2'}}</td>
                 <td><span *ngIf="flagShow">{{sexy.code | lowercase }}</span></td>
                 <td>
                     500
