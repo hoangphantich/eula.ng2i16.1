@@ -35,7 +35,6 @@ export class SexiesComponent {
     sexies: Sexy[];
 
     constructor(private _service: SexyService){
-
     }
 
     //run after constructor
@@ -43,8 +42,15 @@ export class SexiesComponent {
         console.log("Init view");
 
         this._service.getAllSexy()
+                        //lazy async
                         .subscribe(
-                            sexies => this.sexies = sexies
+                            (sexies: Sexy[]) => { 
+                                this.sexies = sexies;
+                            },
+                            (error: any) => {},
+                            () => {
+                                console.log("Complete ajax call");
+                            }
                         );
     }
 
@@ -61,4 +67,7 @@ export class SexiesComponent {
         this.flagShow = !this.flagShow;
     }
 
+    clickVote(event: any){
+        console.log(event + " customize");
+    }
 }

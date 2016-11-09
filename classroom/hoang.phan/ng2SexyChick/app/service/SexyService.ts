@@ -13,7 +13,7 @@ export class SexyService {
 
     constructor(private _http: Http) {}
 
-    getAllSexy(): Observable<Sexy> {
+    getAllSexy(): Observable<Sexy[]> {
         let sexies: any = null;
 
         return this._http.get(this._endPoint)

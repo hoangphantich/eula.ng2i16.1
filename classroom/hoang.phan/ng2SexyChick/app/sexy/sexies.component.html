@@ -5,6 +5,11 @@
 </div>
 
 <div class="pad20"></div>
+
+<audio controls>
+  <source src="mock_data/minion.mp3" type="audio/mpeg">
+</audio>
+
 <div class="sexy-list">
     <!-- Filter   -->
     <span>Search </span>
@@ -38,7 +43,7 @@
                 </td>
                 <td>
                     <p>
-                        <a>{{sexy.name}}</a></p>
+                        <a [routerLink]="[ '/sexydetail', sexy.id ]">{{sexy.name}}</a></p>
                     <p>Tuoi: {{sexy.info.age}}</p>
                     <p>Slogan: {{sexy.info.desc}}</p>
                 </td>
@@ -51,7 +56,7 @@
                 <td> {{sexy.catse | currency:'VND':true:'.2'}}</td>
                 <td><span *ngIf="flagShow">{{sexy.code | lowercase }}</span></td>
                 <td>
-                    500
+                    <vote-ui [voteNr]="sexy.vote" (voteHaha)="clickVote($event)"></vote-ui>
                 </td>
             </tr>
         </tbody>
