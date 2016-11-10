@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
+import {RouterOutlet} from "@angular/router";
 
 @Component({
     selector: 'boo-admin',
     template: `
-    <div><h1>{{pageTitle}}</h1>
-        <div>My First Component</div>
-    </div>
+        <router-outlet></router-outlet>
     `
 })
+
 export class Layout {
-    pageTitle: string = `Acme Product Management`;
+
 }

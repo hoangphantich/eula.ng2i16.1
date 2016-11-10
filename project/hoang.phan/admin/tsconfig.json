@@ -9,5 +9,12 @@
         "removeComments": false,
         "noImplicitAny": true,
         "suppressImplicitAnyIndexErrors": true
-    }
+    },
+    "exclude": [
+        "typings/browser.d.ts",
+        "typings/browser",
+        "node_modules/*",
+        "../../../classroom/hoang.phan/ng2SexyChick/node_modules/",
+        "**/*-aot.ts"
+    ]
 }
