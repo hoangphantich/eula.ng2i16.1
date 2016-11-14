@@ -1,0 +1,27 @@
+table {
+  font-size: 14px;
+}
+.table>tbody>tr>td {
+  vertical-align: middle;
+}
+.table>tbody>tr>td.user-avatar-container {
+  padding: 2px;
+}
+.table .action-column .btn {
+  padding: 0 7px;
+}
+a {
+  cursor: hand;
+}
+.user-panel>.image>img {
+  max-height:45px;
+}
+.ui-autocomplete {
+  max-height: 200px;
+  overflow-y: auto;
+  /* prevent horizontal scrollbar */
+  overflow-x: hidden;
+}
+.region-area > ul {
+  padding-left: 12px !important;
+}

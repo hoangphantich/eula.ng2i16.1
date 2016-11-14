@@ -9,11 +9,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- boostrap -->
-    <!-- <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" /> -->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+    <!-- jquery -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
 
     <!-- admin LTE -->
     <link rel="stylesheet" href="node_modules/admin-lte/dist/css/AdminLTE.min.css">
     <link rel="stylesheet" href="node_modules/admin-lte/dist/css/skins/skin-blue.min.css">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+
+    <!-- our tweak -->
+    <link rel="stylesheet" href="assets/basic/styles.css">
 
 </head>
 
@@ -21,7 +30,13 @@
     <boo-admin>Loading App...</boo-admin>
 
     <!-- jquery -->
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js" async></script>
+
+    <!-- bootstrap -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js" async></script>
+
+    <!-- admin lte -->
+    <script src="node_modules/admin-lte/dist/js/app.min.js" async></script>
 
     <!-- Polyfill(s) for older browsers -->
     <script src="node_modules/core-js/client/shim.min.js"></script>
@@ -34,10 +49,9 @@
     <script src="systemjs.config.js"></script>
     <script>
         System.import('app')
-                .catch(
-                        function(err){
-                            console.error(err);
-                        });
+            .catch(function(err){
+                     console.error(err);
+                   });
     </script>
 
 </body>

@@ -1,22 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule} from '@angular/router';
 
-import { LoginComponent } from './controller/login.component';
-import {Config} from "../../config/config";
-//import {JwtHelper} from "ng2-jwt/src/services/ng2-jwt";
+import {DashboardPage} from "./controller/dashboard.page";
+import {LoginPage} from "./controller/login.page";
 
 @NgModule({
     declarations: [
-        LoginComponent
+        DashboardPage,
+        LoginPage,
     ],
     imports: [
         RouterModule.forChild([
-            { path: 'login', component: LoginComponent },
+            { path: 'login', component: LoginPage },
+            { path: 'dashboard', component: DashboardPage },
         ])
     ],
     providers: [
-        //JwtHelper
-        Config
     ]
 })
 

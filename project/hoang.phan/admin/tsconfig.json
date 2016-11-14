@@ -11,10 +11,8 @@
         "suppressImplicitAnyIndexErrors": true
     },
     "exclude": [
-        "typings/browser.d.ts",
-        "typings/browser",
+        "typings/*",
         "node_modules/*",
-        "../../../classroom/hoang.phan/ng2SexyChick/node_modules/",
         "**/*-aot.ts"
     ]
 }

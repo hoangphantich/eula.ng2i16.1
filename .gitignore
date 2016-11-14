@@ -2,8 +2,9 @@
 .vscode
 node_modules
 jspm_packages
+typings
 link-checker-results.txt
-**/*npm-debug.log.*
+**/*.log
 *.js
 *.js.map
 e2e/**/*.js
