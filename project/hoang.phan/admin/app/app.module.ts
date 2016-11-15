@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
-import {FormsModule} from "@angular/forms";
+import { FormsModule } from "@angular/forms";
+import { RouterModule } from "@angular/router";
 
-import {CoreModule} from "./modules/core/core.module";
 import {Layout} from "./layout/basic/layout";
-import {RouterModule} from "@angular/router";
 import {Config} from "./config/config";
 import {ApiCallHelper} from "./helper/ApiCall.helper";
-import {SharedModule} from "./widget/shared.module";
+
+import {CoreModule} from "./modules/core/core.module";
+import {UserModule} from "./modules/user/user.module";
+import {WidgetModule} from "./widget/widget.module";
 
 @NgModule({
   imports: [
@@ -21,9 +23,9 @@ import {SharedModule} from "./widget/shared.module";
       { path: '**', redirectTo: 'dashboard', pathMatch: 'full' }
     ]),
 
-    SharedModule, //share module
-    CoreModule //core of our app
-
+    WidgetModule, //share module
+    CoreModule, //core of our app
+    UserModule
   ],
   declarations: [
     Layout,

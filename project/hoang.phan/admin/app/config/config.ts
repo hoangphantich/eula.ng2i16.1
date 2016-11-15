@@ -14,6 +14,13 @@ export class Config {
             //'userRegisterApi': this.endpointGateway+'register',
             'loginApi': 'mock_data/login.json',
             //'userRegisterApi': 'mock/user_register_fallback.json',
+
+
+            /**
+             * USER MANAGER
+             */
+            'userlistApi': 'mock_data/user_list.json',
+
         }
     }
 

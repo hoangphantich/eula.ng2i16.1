@@ -1,11 +1,14 @@
 import { NgModule }  from '@angular/core';
+import {CommonModule} from "@angular/common";
+
 import {Sidebar} from "./sidebar/sidebar.widget";
 
 @NgModule({
     declarations: [ Sidebar ],
-    imports: [ ],
+    imports: [ CommonModule ],
     exports: [
-        Sidebar,
+        CommonModule,
+        Sidebar
     ]
 })
-export class SharedModule { }
+export class WidgetModule { }

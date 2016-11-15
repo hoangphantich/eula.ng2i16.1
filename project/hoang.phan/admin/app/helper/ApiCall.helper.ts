@@ -7,21 +7,48 @@ import {Router} from '@angular/router';
 
 @Injectable()
 export class ApiCallHelper {
-    //private auth:Auth;
 
-    constructor(private http:Http, private _router:Router) {
-        //this.auth = new Auth();
+    constructor(private _http:Http, private _router:Router) {
     }
 
-    public post(url: string, body: string, params: URLSearchParams, jwt = true) {
+    private _buildHeader (): Headers {
+        let contentHeaders = new Headers();
+        contentHeaders.append('Accept', 'application/json');
+        contentHeaders.append('Content-Type', 'application/json');
+
+        return contentHeaders;
+    }
+
+    public get(url : string, params: URLSearchParams , jwt = true)
+        : Observable<Response> {
+        if (!params)
+            params = new URLSearchParams();
+
+        let contentHeaders = this._buildHeader();
+
+        if (jwt) {
+            var token = localStorage.getItem('jwt');
+            if (token)
+                contentHeaders.append('Authorization', 'Bearer' + ' ' + token);
+        }
+
+        //Response Observable
+        return this._http.get(url,
+                            {headers: contentHeaders, search: params})
+                .catch((error) => {
+                    this._checkResponse(error);
+                    return Observable.throw(error);
+                });
+        }
+
+    public post(url: string, body: string, params: URLSearchParams, jwt = true)
+        : Observable<Response> {
         //check params
         if (!params)
             params = new URLSearchParams();
 
         //build header
-        var contentHeaders = new Headers();
-        //contentHeaders.append('Accept', 'application/json');
-        contentHeaders.append('Content-Type', 'application/json');
+        let contentHeaders = this._buildHeader();
 
         //check token
         if (jwt) {
@@ -31,16 +58,16 @@ export class ApiCallHelper {
         }
 
         //return Observable
-        return this.http.post(
+        return this._http.post(
             url, body,
             {headers: contentHeaders, search: params})
             .catch((error) => {
-                this.checkResponse(error);
+                this._checkResponse(error);
                 return Observable.throw(error);
         });
     }
 
-    private checkResponse(error:any) {
+    private _checkResponse(error:any) {
         switch (error.status) {
             case 419:
                 alert('Your session expired! Please log in again!');

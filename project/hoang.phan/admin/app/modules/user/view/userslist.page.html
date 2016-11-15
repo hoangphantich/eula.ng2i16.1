@@ -1,0 +1,102 @@
+<section class="content-header">
+    <h1>User Management
+        <small>View/Add/Edit/Delete users</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li class="current">Users</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Users</h3>
+
+                    <div class="box-tools">
+                        <div class="input-group input-group-sm">
+                            <input type="text" name="table_search" id="filter_search"
+                                   class="form-control pull-right"
+                                   placeholder="Search" style="width: 150px">
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-default">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                    <div class="mailbox-controls">
+
+                        <select title="User role filter" name="user-role-filter"
+                                class="form-control pull-left input-sm"
+                                style="width: 100px">
+                            <option value="-1">All users</option>
+                            <option value="1">Administrator</option>
+                            <option value="2">Partner</option>
+                            <option value="3">User</option>
+                        </select>
+
+                        <select title="User active filter" name="user-active-filter"
+                                class="form-control pull-left input-sm"
+                                style="width: 100px; margin-left: 10px">
+                            <option value="-1">All users</option>
+                            <option value="1">Active</option>
+                            <option value="0">Inactive</option>
+                        </select>
+                        <button type="button" class="btn btn-block btn-default btn-sm pull-left"
+                                style="width: 100px; margin-left: 10px">
+                            <i class="fa fa-fw fa-plus"></i> New user</button>
+                        <div class="pull-right">
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <table id="user_list_table" class="table table-hover">
+                        <tr>
+                            <th>Avatar</th>
+                            <th>Name</th>
+                            <th>Register</th>
+                            <th>Roles</th>
+                            <th>Tel</th>
+                            <th>Email</th>
+                            <th>Activated</th>
+                            <th>Actions</th>
+                        </tr>
+                        <tr *ngFor="let user of users" id="user-1">
+                            <td class="user-avatar-container">
+                                <a href="#">
+                                    <img src="assets/images/avatar_blank.jpg"
+                                         class="img-thumbnail" alt="User Image" width="32" height="32"/>
+                                </a>
+                            </td>
+                            <td><a href="#">{{user.name}}</a></td>
+                            <td>{{user.tel}}</td>
+                            <td><span class="label label-1">Administrator</span></td>
+                            <td>0912 10655</td>
+                            <td>{{user.email}}</td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td class="action-column">
+                                <button type="button" class="btn">
+                                    <i class="fa fa-edit"></i>
+                                </button>
+                                <button type="button" class="btn">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer clearfix"></div>
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+
+</section>
