@@ -32,7 +32,7 @@ import { Component } from '@angular/core';
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li class="user-header">
-                                        <img src="#" class="img-circle" alt="Hoang pix">
+                                        <img src="mock_data/images/avatar_blank.jpg" class="img-circle" alt="Hoang pix">
                                         <p>
                                             Hoang pix
                                             <small>Member since 2012</small>
