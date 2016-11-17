@@ -73,7 +73,7 @@
                                          class="img-thumbnail" alt="User Image" width="32" height="32"/>
                                 </a>
                             </td>
-                            <td><a href="#">{{user.name}}</a></td>
+                            <td><a [routerLink]="['/user', user.id]">{{user.name}}</a></td>
                             <td>{{user.created_at}}</td>
                             <td><span class="label label-{{user.role_id | roleToColor}}">{{user.role_id | roleToText}}</span></td>
                             <td>{{user.tel}}</td>

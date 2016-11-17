@@ -11,7 +11,7 @@ export class ApiCallHelper {
     constructor(private _http:Http, private _router:Router) {
     }
 
-    private _buildHeader (): Headers {
+    _buildHeader (): Headers {
         let contentHeaders = new Headers();
         contentHeaders.append('Accept', 'application/json');
         contentHeaders.append('Content-Type', 'application/json');
@@ -67,7 +67,7 @@ export class ApiCallHelper {
         });
     }
 
-    private _checkResponse(error:any) {
+    _checkResponse(error:any) {
         switch (error.status) {
             case 419:
                 alert('Your session expired! Please log in again!');

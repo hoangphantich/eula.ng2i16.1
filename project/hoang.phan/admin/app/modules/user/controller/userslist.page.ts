@@ -29,15 +29,15 @@ export class UsersListPage {
     users: User[];
     totalUser: number;
 
-    constructor(private config: Config, private apiHelper : ApiCallHelper){
+    constructor(private _config: Config, private _apiHelper : ApiCallHelper){
 
     }
 
     getUsersFromApi(){
         //get service of user
-        let url = this.config.get('userlistApi');
+        let url = this._config.get('userlistApi');
 
-        this.apiHelper.get(url, null, false)
+        this._apiHelper.get(url, null, false)
             .subscribe(
                 data => {
                     //parse data from service -> bind users

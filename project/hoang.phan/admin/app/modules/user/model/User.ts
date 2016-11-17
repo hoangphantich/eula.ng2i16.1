@@ -1,3 +1,5 @@
+import {File} from "../../core/model/File";
+
 /**
  * Model
  */
@@ -5,7 +7,7 @@ export interface User {
 
     id: number;
 
-    avatarFile: string;
+    avatarFile: File;
 
     name: string;
 

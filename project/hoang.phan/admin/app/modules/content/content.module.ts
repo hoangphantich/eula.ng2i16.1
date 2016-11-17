@@ -2,21 +2,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from "@angular/common";
 
-import {UsersListPage} from "./controller/userslist.page";
-import {RoleToTextPipe} from "./helper/roleToText";
-import {RoleToColorPipe} from "./helper/roleToColor";
+import {ArticlesListPage} from "./controller/articleslist.page";
 
 @NgModule({
     declarations: [
-        UsersListPage,
-        RoleToTextPipe,
-        RoleToColorPipe
+        ArticlesListPage,
     ],
     imports: [
         CommonModule,
         RouterModule.forChild([
-            { path: 'users', component: UsersListPage },
-            { path: 'user/:id/:name', component: UsersListPage },
+            { path: 'articles', component: ArticlesListPage },
+            { path: 'article/:id', component: ArticlesListPage },
         ])
     ],
     providers: [

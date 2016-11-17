@@ -20,6 +20,9 @@ export class Config {
              * USER MANAGER
              */
             'userlistApi': 'mock_data/user_list.json',
+            'userdetailApi': 'mock_data/user_detail.json?%id%',
+            //'userlistApi': this.endpointGateway+'users',
+            //'userdetailApi': this.endpointGateway+'users/%id%',
 
         }
     }

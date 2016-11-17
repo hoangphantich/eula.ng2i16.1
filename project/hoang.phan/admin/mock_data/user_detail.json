@@ -1,0 +1,21 @@
+{
+  "code": 200,
+  "message": "OK",
+  "result": {
+    "id": 1,
+    "name": "Hans",
+    "avatarFile": {
+      "id": 44,
+      "origin": "https://assets.dev.bontrax.com/avatars/1/2016_09_02/Selfie_2016_07_14_16_14_35_13870.jpg",
+      "crop": "https://assets.dev.bontrax.com/avatars/1/2016_09_02/Selfie_2016_07_14_16_14_35_13870_90x90.jpg",
+      "small": "https://assets.dev.bontrax.com/avatars/1/2016_09_02/Selfie_2016_07_14_16_14_35_13870_300x200.jpg",
+      "medium": "https://assets.dev.bontrax.com/avatars/1/2016_09_02/Selfie_2016_07_14_16_14_35_13870_600x400.jpg",
+      "large": "https://assets.dev.bontrax.com/avatars/1/2016_09_02/Selfie_2016_07_14_16_14_35_13870_900x600.jpg"
+    },
+    "email": "hans@bontrax.com",
+    "tel": "0472312382",
+    "role_id": 1,
+    "active": 1,
+    "created_at": "06/27/2016"
+  }
+}

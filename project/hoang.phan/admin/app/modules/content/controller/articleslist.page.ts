@@ -23,7 +23,7 @@ interface UserFilter {
 /**
  * event controller
  */
-export class UsersListPage {
+export class ArticlesListPage {
 
     //filter: UserFilter = {} ;
     users: User[];
@@ -33,7 +33,7 @@ export class UsersListPage {
 
     }
 
-    getUsersFromApi(){
+    getArticlesFromApi(){
         //get service of user
         let url = this.config.get('userlistApi');
 
@@ -50,7 +50,7 @@ export class UsersListPage {
     }
 
     ngOnInit(){
-        this.getUsersFromApi();
+        this.getArticlesFromApi();
     }
 
 }
