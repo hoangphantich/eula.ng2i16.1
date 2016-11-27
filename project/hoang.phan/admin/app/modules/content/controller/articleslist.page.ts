@@ -35,7 +35,7 @@ export class ArticlesListPage {
 
     getArticlesFromApi(){
         //get service of user
-        let url = this.config.get('userlistApi');
+        let url = "mock_data/user_list.json";
 
         this.apiHelper.get(url, null, false)
             .subscribe(

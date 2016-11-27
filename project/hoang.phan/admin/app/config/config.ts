@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class Config {
     private endpointGateway = "https://api.dev.bontrax.com/v1/";
+    private development = 'production';
     private _config = {};
 
     constructor() {

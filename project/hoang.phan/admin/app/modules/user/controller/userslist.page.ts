@@ -35,7 +35,8 @@ export class UsersListPage {
 
     getUsersFromApi(){
         //get service of user
-        let url = this._config.get('userlistApi');
+        //let url = this._config.get('userlistApi');
+        let url = "mock_data/user_list.json";
 
         this._apiHelper.get(url, null, false)
             .subscribe(
@@ -50,7 +51,23 @@ export class UsersListPage {
     }
 
     ngOnInit(){
-        this.getUsersFromApi();
+        //get service of user
+        //let url = this._config.get('userlistApi');
+        let url = "mock_data/user_list.json";
+
+        this._apiHelper.get(url, null, false)
+            .subscribe(
+                data => {
+                    //parse data from service -> bind users
+                    let result = data.json().result;
+
+                    this.users = result.users;
+                    this.totalUser = result.totalResults;
+                }
+            );
+        //ghi log
+
+        //fsdfd
     }
 
 }
