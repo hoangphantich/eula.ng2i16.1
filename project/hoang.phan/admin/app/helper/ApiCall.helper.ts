@@ -1,9 +1,11 @@
 import {Injectable} from '@angular/core';
 import {URLSearchParams, Http, Headers, Response} from '@angular/http';
+import {Router} from '@angular/router';
+
 import 'rxjs/Rx';
 import {Observable} from 'rxjs/Observable';
+
 import {Auth} from '../plugin/auth';
-import {Router} from '@angular/router';
 
 @Injectable()
 export class ApiCallHelper {
@@ -19,6 +21,16 @@ export class ApiCallHelper {
         return contentHeaders;
     }
 
+    /**
+     * GET
+     *
+     * @author hoangpt
+     *
+     * @param url
+     * @param params
+     * @param jwt
+     * @returns {Observable<R>}
+     */
     public get(url : string, params: URLSearchParams , jwt = true)
         : Observable<Response> {
         if (!params)
@@ -33,14 +45,25 @@ export class ApiCallHelper {
         }
 
         //Response Observable
-        return this._http.get(url,
-                            {headers: contentHeaders, search: params})
+        return this._http.get(url, {headers: contentHeaders, search: params})
                 .catch((error) => {
                     this._checkResponse(error);
                     return Observable.throw(error);
                 });
-        }
+    }
 
+
+    /**
+     * POST
+     *
+     * @author hoangpt
+     *
+     * @param url
+     * @param body
+     * @param params
+     * @param jwt
+     * @returns {Observable<R>}
+     */
     public post(url: string, body: string, params: URLSearchParams, jwt = true)
         : Observable<Response> {
         //check params
@@ -59,7 +82,8 @@ export class ApiCallHelper {
 
         //return Observable
         return this._http.post(
-            url, body,
+            url,
+            body,
             {headers: contentHeaders, search: params})
             .catch((error) => {
                 this._checkResponse(error);
@@ -70,6 +94,7 @@ export class ApiCallHelper {
     _checkResponse(error:any) {
         switch (error.status) {
             case 419:
+                //check authenticate session from server
                 alert('Your session expired! Please log in again!');
                 //this.auth.logout();
                 this._router.navigate(['Login']);

@@ -9,9 +9,8 @@ import {User} from "../model/User";
 
 @Component({
     selector: 'user-detail',
-    templateUrl: 'app/modules/user/view/userdetail.page.html',
-    styleUrls: [],
-    providers: []
+    //templateUrl: 'app/modules/user/view/userdetail.page.html',
+    templateUrl: "test.html"
 })
 
 /**
@@ -20,7 +19,6 @@ import {User} from "../model/User";
 export class UserDetailPage {
 
     private currentUser: User;
-    private userId:string;
     private form: FormGroup;
     private submitAttempt:boolean = false;
 
@@ -45,7 +43,6 @@ export class UserDetailPage {
                     let result = data.json().result;
 
                     this.currentUser = result;
-                    console.log(this.currentUser);
                 }
             );
     }
